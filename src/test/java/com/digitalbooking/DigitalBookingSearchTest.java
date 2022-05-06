@@ -1,17 +1,18 @@
 package com.digitalbooking;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import static org.junit.Assert.assertTrue;
+
+
 
 public class DigitalBookingSearchTest {
 	
 	private WebDriver driver;
-	
 	
 	@Test
 	public void testSearch() throws InterruptedException {
@@ -24,6 +25,7 @@ public class DigitalBookingSearchTest {
 		WebElement searchBox = driver.findElement(By.id("ciudad"));
 		searchBox.clear();
 		searchBox.sendKeys("punta del este");
+		Thread.sleep(1000);
 		searchBox.sendKeys(Keys.ENTER);
 		Thread.sleep(5000);
 		
@@ -39,5 +41,4 @@ public class DigitalBookingSearchTest {
 		
 		driver.quit();
 	}
-	
 }
