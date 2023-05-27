@@ -20,7 +20,7 @@ public class DigitalBookingSearchTest {
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver= new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("http://fe.deitech.online/");
+		driver.get("http://testing.ctd.academy");
 		
 		WebElement searchBox = driver.findElement(By.id("ciudad"));
 		searchBox.clear();
@@ -39,6 +39,6 @@ public class DigitalBookingSearchTest {
 		
 		assertTrue(res.contains("Villa Kantounes Studio Ostria"));
 		
-		driver.quit();
+		driver.close();
 	}
 }
